@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=delsud
+      - POSTGRES_USER=delsud
+      - POSTGRES_PASSWORD=delsud
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://delsud:delsud@db:5432/delsud
+      - DEBUG=1
+      - SECRET_KEY=your-secret-key-here
+    networks:
+      - app-network
+
+  # frontend:
+  #   build:
+  #     context: ./my-app
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - ./my-app:/app
+  #     - /app/node_modules
+  #     - /app/.next
+  #   ports:
+  #     - "3001:3000"
+  #   environment:
+  #     - NEXT_PUBLIC_API_URL=http://localhost:8000
+  #     - CHOKIDAR_USEPOLLING=true
+  #     - WATCHPACK_POLLING=true
+  #   depends_on:
+  #     - backend
+  #   networks:
+  #     - app-network
+
+networks:
+  app-network:
+    external: true
+
+volumes:
+  postgres_data:

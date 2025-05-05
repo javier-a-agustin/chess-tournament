@@ -1,0 +1,56 @@
+{
+    "name": "Torneo Inaugural 2024",
+    "start_date": "2024-03-01T10:00:00Z",
+    "status": "pending",
+    "mode": "classical",
+    "prize": "1000.00",
+    "created_at": "2024-01-15T00:00:00Z",
+    "updated_at": "2024-01-15T00:00:00Z",
+    "code": "b7e2a1c2-8f3a-4e2a-9c1a-1a2b3c4d5e6f",
+    "matches": [
+      {
+        "match_id": "T1-M1",
+        "status": "scheduled",
+        "player1_username": "player4",
+        "player2_username": "player5",
+        "start_time": null,
+        "end_time": null,
+        "winner": null
+      },
+      {
+        "match_id": "T1-M2",
+        "status": "scheduled",
+        "player1_username": "player5",
+        "player2_username": "player6",
+        "start_time": null,
+        "end_time": null,
+        "winner": null
+      },
+      {
+        "match_id": "T1-M3",
+        "status": "scheduled",
+        "player1_username": "player6",
+        "player2_username": "player4",
+        "start_time": null,
+        "end_time": null,
+        "winner": null
+      }
+    ],
+    "participants": [
+      {
+        "username": "player4",
+        "elo": 1000,
+        "points": 0
+      },
+      {
+        "username": "player5",
+        "elo": 1000,
+        "points": 0
+      },
+      {
+        "username": "player6",
+        "elo": 1000,
+        "points": 0
+      }
+    ]
+  }

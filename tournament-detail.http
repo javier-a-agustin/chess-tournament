@@ -1,0 +1,7 @@
+GET http://localhost:8000/api/tournaments/tournaments/b7e2a1c2-8f3a-4e2a-9c1a-1a2b3c4d5e6f/
+Authorization: Token 9fdafb3ac0625091bd586c8883cc85288909fa5a
+Content-Type: application/json
+
+
+
+

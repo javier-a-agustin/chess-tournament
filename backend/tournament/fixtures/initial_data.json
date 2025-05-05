@@ -1,0 +1,264 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "username": "player4",
+            "password": "pbkdf2_sha256$600000$abcdefghijklmnopqrstuvwx$1234567890abcdefghijklmnopqrstuvwxyz=",
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-01T00:00:00Z",
+            "email": "player4@example.com",
+            "first_name": "John",
+            "last_name": "Doe"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "username": "player5",
+            "password": "pbkdf2_sha256$600000$abcdefghijklmnopqrstuvwx$1234567890abcdefghijklmnopqrstuvwxyz=",
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-01T00:00:00Z",
+            "email": "player5@example.com",
+            "first_name": "Jane",
+            "last_name": "Smith"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "username": "player6",
+            "password": "pbkdf2_sha256$600000$abcdefghijklmnopqrstuvwx$1234567890abcdefghijklmnopqrstuvwxyz=",
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-01-01T00:00:00Z",
+            "email": "player6@example.com",
+            "first_name": "Mike",
+            "last_name": "Johnson"
+        }
+    },
+    {
+        "model": "tournament.tournament",
+        "pk": 1,
+        "fields": {
+            "name": "Torneo Inaugural 2024",
+            "start_date": "2024-03-01T10:00:00Z",
+            "status": "pending",
+            "mode": "classical",
+            "prize": "1000.00",
+            "created_at": "2024-01-15T00:00:00Z",
+            "updated_at": "2024-01-15T00:00:00Z",
+            "code": "b7e2a1c2-8f3a-4e2a-9c1a-1a2b3c4d5e6f"
+        }
+    },
+    {
+        "model": "tournament.tournament",
+        "pk": 2,
+        "fields": {
+            "name": "Torneo Rápido Febrero",
+            "start_date": "2024-02-15T15:00:00Z",
+            "status": "in_progress",
+            "mode": "rapid",
+            "prize": "500.00",
+            "created_at": "2024-01-10T00:00:00Z",
+            "updated_at": "2024-01-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "tournament.tournament",
+        "pk": 3,
+        "fields": {
+            "name": "Torneo Blitz Marzo",
+            "start_date": "2024-03-15T18:00:00Z",
+            "status": "pending",
+            "mode": "blitz",
+            "prize": "300.00",
+            "created_at": "2024-02-01T00:00:00Z",
+            "updated_at": "2024-02-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "tournament.tournament",
+        "pk": 4,
+        "fields": {
+            "name": "Torneo Bala Abril",
+            "start_date": "2024-04-01T20:00:00Z",
+            "status": "pending",
+            "mode": "bullet",
+            "prize": "200.00",
+            "created_at": "2024-02-15T00:00:00Z",
+            "updated_at": "2024-02-15T00:00:00Z"
+        }
+    },
+    {
+        "model": "tournament.participant",
+        "pk": 1,
+        "fields": {
+            "tournament": 1,
+            "user": 4,
+            "registration_date": "2024-01-16T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "tournament.participant",
+        "pk": 2,
+        "fields": {
+            "tournament": 1,
+            "user": 5,
+            "registration_date": "2024-01-16T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "tournament.participant",
+        "pk": 3,
+        "fields": {
+            "tournament": 1,
+            "user": 6,
+            "registration_date": "2024-01-16T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "tournament.participant",
+        "pk": 4,
+        "fields": {
+            "tournament": 2,
+            "user": 4,
+            "registration_date": "2024-01-11T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "tournament.participant",
+        "pk": 5,
+        "fields": {
+            "tournament": 2,
+            "user": 5,
+            "registration_date": "2024-01-11T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "tournament.participant",
+        "pk": 6,
+        "fields": {
+            "tournament": 3,
+            "user": 4,
+            "registration_date": "2024-02-02T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "tournament.participant",
+        "pk": 7,
+        "fields": {
+            "tournament": 3,
+            "user": 5,
+            "registration_date": "2024-02-02T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "tournament.participant",
+        "pk": 8,
+        "fields": {
+            "tournament": 4,
+            "user": 6,
+            "registration_date": "2024-02-16T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "tournament.match",
+        "pk": 1,
+        "fields": {
+            "tournament": 1,
+            "match_id": "T1-M1",
+            "player1": 1,
+            "player2": 2,
+            "status": "scheduled",
+            "start_time": null,
+            "end_time": null,
+            "winner": null
+        }
+    },
+    {
+        "model": "tournament.match",
+        "pk": 2,
+        "fields": {
+            "tournament": 1,
+            "match_id": "T1-M2",
+            "player1": 2,
+            "player2": 3,
+            "status": "scheduled",
+            "start_time": null,
+            "end_time": null,
+            "winner": null
+        }
+    },
+    {
+        "model": "tournament.match",
+        "pk": 3,
+        "fields": {
+            "tournament": 2,
+            "match_id": "T2-M1",
+            "player1": 4,
+            "player2": 5,
+            "status": "in_progress",
+            "start_time": "2024-02-15T15:00:00Z",
+            "end_time": null,
+            "winner": null
+        }
+    },
+    {
+        "model": "tournament.match",
+        "pk": 4,
+        "fields": {
+            "tournament": 3,
+            "match_id": "T3-M1",
+            "player1": 6,
+            "player2": 7,
+            "status": "scheduled",
+            "start_time": null,
+            "end_time": null,
+            "winner": null
+        }
+    },
+    {
+        "model": "tournament.match",
+        "pk": 5,
+        "fields": {
+            "tournament": 1,
+            "match_id": "T1-M3",
+            "player1": 3,
+            "player2": 1,
+            "status": "scheduled",
+            "start_time": null,
+            "end_time": null,
+            "winner": null
+        }
+    },
+    {
+        "model": "tournament.match",
+        "pk": 6,
+        "fields": {
+            "tournament": 2,
+            "match_id": "T2-M2",
+            "player1": 5,
+            "player2": 4,
+            "status": "scheduled",
+            "start_time": null,
+            "end_time": null,
+            "winner": null
+        }
+    }
+] 
