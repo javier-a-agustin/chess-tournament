@@ -84,7 +84,7 @@ DATABASES = {
         "NAME": "delsud",
         "USER": "delsud",
         "PASSWORD": "delsud",
-        "HOST": "db",
+        "HOST": "db.app-network",
         "PORT": "5432",
     }
 }
