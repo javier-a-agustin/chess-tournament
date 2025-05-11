@@ -175,7 +175,7 @@ export default function SignUpForm() {
                 </button>
                 <Link
                     href="#"
-                    className="flex-1 bg-[#e74c3c] text-white py-2 px-4 rounded text-center hover:bg-[#c0392b] transition-colors"
+                    className="flex-1 bg-jTextRed text-white py-2 px-4 rounded text-xs text-center content-center hover:bg-jTextRedHover transition-colors"
                 >
                     TÉRMINOS Y CONDIC.
                 </Link>

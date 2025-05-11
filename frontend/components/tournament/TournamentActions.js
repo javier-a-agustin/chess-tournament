@@ -2,22 +2,25 @@
 
 import { useState } from 'react'
 import CreateTournamentModal from './CreateTournamentModal'
+import Footer from '../core/footer'
 
 const TournamentActions = ({  setTournaments, setErrorList, setLoadingList, handleGetTournaments }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     return (
         <>
-            <div className="fixed bottom-0 left-0 right-0 bg-[#e91e63] p-4">
-                <div className="flex justify-center items-center">
+            <Footer className="fixed bottom-0 left-0 right-0">
+                <div className="flex justify-center items-center gap-4">
                     <button 
                         onClick={() => setIsModalOpen(true)}
-                        className="w-48 bg-[#f0e68c] text-black font-bold py-2 px-4 rounded"
+                        className="w-48 bg-jBeige text-black font-bold py-2 px-4 rounded"
                     >
                         Crear Torneo
                     </button>
+
+                    <p className="text-jText text-2xl font-bold">TORNEOS</p>
                 </div>
-            </div>
+            </Footer>
 
             <CreateTournamentModal 
                 isOpen={isModalOpen}

@@ -58,7 +58,7 @@ const LoginForm = () => {
             <label className="text-black font-medium text-base tracking-widest">USUARIO</label>
             <input 
                 type="text" 
-                className="w-full bg-black text-[#f0e68c] rounded px-3 py-2 font-semibold tracking-widest text-base focus:outline-none" 
+                className="w-full bg-black text-jText rounded px-3 py-2 font-semibold tracking-widest text-base focus:outline-none" 
                 value={username}
                 onChange={e => setUsername(e.target.value)}
                 disabled={isLoading}
@@ -67,7 +67,7 @@ const LoginForm = () => {
             <label className="text-black font-medium text-base tracking-widest mt-2">CONTRASEÑA</label>
             <input 
                 type="password" 
-                className="w-full bg-black text-[#f0e68c] rounded px-3 py-2 font-semibold tracking-widest text-base focus:outline-none pr-10" 
+                className="w-full bg-black text-jText rounded px-3 py-2 font-semibold tracking-widest text-base focus:outline-none pr-10" 
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 disabled={isLoading}
@@ -76,14 +76,14 @@ const LoginForm = () => {
             <div className="flex gap-2 mt-6">
                 <button 
                     type="submit" 
-                    className={`flex-1 py-2 bg-[#4d4936] text-[#f0e68c] font-bold tracking-widest text-md rounded transition-colors ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#5d5946]'}`}
+                    className={`flex-1 py-2 bg-[#4d4936] text-jText font-bold tracking-widest text-md rounded transition-colors ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#5d5946]'}`}
                     disabled={isLoading}
                 >
                     {isLoading ? 'CARGANDO...' : 'SUBMIT'}
                 </button>
                 <button 
                     type="button" 
-                    className="flex-1 py-2 bg-[#e74c3c] text-white font-bold tracking-widest text-sm rounded transition-colors hover:bg-[#c0392b]"
+                    className="flex-1 py-2 bg-jTextRed text-white font-bold tracking-widest text-sm rounded transition-colors hover:bgtext-jTextRedHover"
                     disabled={isLoading}
                 >
                     TÉRMINOS Y CONDIC

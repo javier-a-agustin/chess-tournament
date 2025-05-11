@@ -75,7 +75,7 @@ const CreateTournamentModal = ({ isOpen, onClose, handleGetTournaments }) => {
             await tournamentSchema.validate(formData, { abortEarly: false });
 
             const response = await createTournament(formData);
-            
+
             if (response.success) {
                 handleGetTournaments()
                 onClose();
@@ -101,40 +101,54 @@ const CreateTournamentModal = ({ isOpen, onClose, handleGetTournaments }) => {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-[#f0e68c] rounded-lg w-full max-w-2xl">
+            <div className="bg-jBeige rounded-lg w-full max-w-2xl">
                 <div className="p-6">
                     <h2 className="text-2xl font-bold text-center mb-6">CREAR TORNEO</h2>
-                    
-                    <div className="space-y-4">
+
+                    <div className="grid grid-cols-2 gap-4">
                         {error && (
                             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
                                 {error}
                             </div>
                         )}
 
-                        {/* Tournament Name */}
-                        <div>
-                            <input
-                                type="text"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                placeholder="NOMBRE TORNEO"
-                                className={`w-full bg-[#333] text-[#f0e68c] p-3 rounded ${errors.name ? 'border-2 border-red-500' : ''}`}
-                            />
-                            {errors.name && (
-                                <p className="mt-1 text-red-500 text-sm">{errors.name}</p>
-                            )}
+                        <div className="grid grid-cols-1">
+                            <div>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="NOMBRE TORNEO"
+                                    className={`w-full bg-[#333] text-jText p-3 mb-2 rounded ${errors.name ? 'border-2 border-red-500' : ''}`}
+                                />
+                                {errors.name && (
+                                    <p className="mt-1 text-red-500 text-sm">{errors.name}</p>
+                                )}
+                            </div>
+
+                            <div>
+                                <textarea
+                                    name="description"
+                                    value={formData.description}
+                                    onChange={handleChange}
+                                    placeholder="DESCRIPCIÓN"
+                                    rows={12}
+                                    className={`w-full bg-[#333] text-jText p-3 rounded ${errors.description ? 'border-2 border-red-500' : ''}`}
+                                />
+                                {errors.description && (
+                                    <p className="mt-1 text-red-500 text-sm">{errors.description}</p>
+                                )}
+                            </div>
                         </div>
 
-                        {/* Mode Dropdown and Start Date */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1">
                             <div>
                                 <select
                                     name="mode"
                                     value={formData.mode}
                                     onChange={handleChange}
-                                    className={`w-full bg-[#333] text-[#f0e68c] p-3 rounded ${errors.mode ? 'border-2 border-red-500' : ''}`}
+                                    className={`w-full bg-[#333] text-jText p-3 rounded ${errors.mode ? 'border-2 border-red-500' : ''}`}
                                 >
                                     <option value="">MODO</option>
                                     <option value="classical">Clásico (&gt;60 min)</option>
@@ -147,64 +161,48 @@ const CreateTournamentModal = ({ isOpen, onClose, handleGetTournaments }) => {
                                     <p className="mt-1 text-red-500 text-sm">{errors.mode}</p>
                                 )}
                             </div>
-                        </div>
 
-                        {/* Description */}
-                        <div>
-                            <textarea
-                                name="description"
-                                value={formData.description}
-                                onChange={handleChange}
-                                placeholder="DESCRIPCIÓN"
-                                className={`w-full bg-[#333] text-[#f0e68c] p-3 rounded h-32 ${errors.description ? 'border-2 border-red-500' : ''}`}
-                            />
-                            {errors.description && (
-                                <p className="mt-1 text-red-500 text-sm">{errors.description}</p>
-                            )}
-                        </div>
 
-                        {/* Tournament Details Grid */}
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-[#f0e68c] p-2 rounded">
+                            <div className="bg-jBeige p-2 rounded">
                                 <label className="block text-black font-bold">FECHA INICIO</label>
                                 <input
                                     type="date"
                                     name="date"
                                     value={formData.date}
                                     onChange={handleChange}
-                                    className={`w-full bg-[#333] text-[#f0e68c] p-2 rounded ${errors.date ? 'border-2 border-red-500' : ''}`}
+                                    className={`w-full bg-[#333] text-jText p-2 rounded ${errors.date ? 'border-2 border-red-500' : ''}`}
                                 />
                                 {errors.date && (
                                     <p className="mt-1 text-red-500 text-sm">{errors.date}</p>
                                 )}
                             </div>
-                            <div className="bg-[#f0e68c] p-2 rounded">
+                            <div className="bg-jBeige p-2 rounded">
                                 <label className="block text-black font-bold">HORA INICIO</label>
                                 <input
                                     type="time"
                                     name="time"
                                     value={formData.time}
                                     onChange={handleChange}
-                                    className={`w-full bg-[#333] text-[#f0e68c] p-2 rounded ${errors.time ? 'border-2 border-red-500' : ''}`}
+                                    className={`w-full bg-[#333] text-jText p-2 rounded ${errors.time ? 'border-2 border-red-500' : ''}`}
                                 />
                                 {errors.time && (
                                     <p className="mt-1 text-red-500 text-sm">{errors.time}</p>
                                 )}
                             </div>
-                            <div className="bg-[#f0e68c] p-2 rounded">
+                            <div className="bg-jBeige p-2 rounded">
                                 <label className="block text-black font-bold">JUGADORES</label>
                                 <input
                                     type="number"
                                     name="players"
                                     value={formData.players}
                                     onChange={handleChange}
-                                    className={`w-full bg-[#333] text-[#f0e68c] p-2 rounded ${errors.players ? 'border-2 border-red-500' : ''}`}
+                                    className={`w-full bg-[#333] text-jText p-2 rounded ${errors.players ? 'border-2 border-red-500' : ''}`}
                                 />
                                 {errors.players && (
                                     <p className="mt-1 text-red-500 text-sm">{errors.players}</p>
                                 )}
                             </div>
-                            <div className="bg-[#f0e68c] p-2 rounded">
+                            <div className="bg-jBeige p-2 rounded">
                                 <label className="block text-black font-bold">PREMIO</label>
                                 <input
                                     type="number"
@@ -212,7 +210,7 @@ const CreateTournamentModal = ({ isOpen, onClose, handleGetTournaments }) => {
                                     value={formData.prize}
                                     onChange={handleChange}
                                     placeholder="5.000 PTS"
-                                    className={`w-full bg-[#333] text-[#f0e68c] p-2 rounded ${errors.prize ? 'border-2 border-red-500' : ''}`}
+                                    className={`w-full bg-[#333] text-jText p-2 rounded ${errors.prize ? 'border-2 border-red-500' : ''}`}
                                 />
                                 {errors.prize && (
                                     <p className="mt-1 text-red-500 text-sm">{errors.prize}</p>
@@ -220,23 +218,24 @@ const CreateTournamentModal = ({ isOpen, onClose, handleGetTournaments }) => {
                             </div>
                         </div>
 
-                        {/* Buttons */}
-                        <div className="flex justify-end space-x-4 mt-6">
-                            <button
-                                onClick={onClose}
-                                disabled={loading}
-                                className="px-6 py-2 bg-[#333] text-[#f0e68c] rounded font-bold disabled:opacity-50"
-                            >
-                                CANCEL
-                            </button>
-                            <button
-                                onClick={handleSubmit}
-                                disabled={loading}
-                                className="px-6 py-2 bg-[#e91e63] text-white rounded font-bold disabled:opacity-50"
-                            >
-                                {loading ? 'CREANDO...' : 'CREAR'}
-                            </button>
-                        </div>
+                    </div>
+
+
+                    <div className="flex justify-end space-x-4 mt-6">
+                        <button
+                            onClick={onClose}
+                            disabled={loading}
+                            className="px-6 py-2 bg-[#333] text-jText rounded font-bold disabled:opacity-50"
+                        >
+                            CANCEL
+                        </button>
+                        <button
+                            onClick={handleSubmit}
+                            disabled={loading}
+                            className="px-6 py-2 bg-[#e91e63] text-white rounded font-bold disabled:opacity-50"
+                        >
+                            {loading ? 'CREANDO...' : 'CREAR'}
+                        </button>
                     </div>
                 </div>
             </div>

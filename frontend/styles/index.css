@@ -1,0 +1,29 @@
+
+.rotation-main {
+
+    @media screen and (max-width: 768px) {
+        transform: rotate(0deg);
+    }
+    transform: rotate(45deg);
+}
+
+.rotation-negative {
+    transform: rotate(-45deg);
+
+    @media screen and (max-width: 768px) {
+        transform: rotate(0deg);
+    }
+}
+
+.hidden-mobile {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.text-mobile {
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+    }
+    max-width: 60%;
+}

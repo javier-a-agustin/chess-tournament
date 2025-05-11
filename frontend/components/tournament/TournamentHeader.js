@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from 'next/navigation'
+import LeftArrow from '../core/leftArrow'
 
 export default function TournamentHeader() {
     const router = useRouter()
@@ -12,10 +13,10 @@ export default function TournamentHeader() {
 
     return (
         <div className="flex justify-between items-center mb-6">
-            <div className="text-[#f0e68c] hover:opacity-80 cursor-pointer" onClick={handleLogout}>
-                <div className="text-3xl">←</div>
+            <div className="text-jText hover:opacity-80 cursor-pointer" onClick={handleLogout}>
+                <LeftArrow />
             </div>
-            <div className="text-[#f0e68c] text-xl">LOGO EMPRESA</div>
+            <div className="text-jText text-xl">LOGO EMPRESA</div>
         </div>
     )
 } 

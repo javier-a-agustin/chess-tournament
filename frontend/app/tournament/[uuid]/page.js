@@ -4,6 +4,8 @@ import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getTournamentDetail, registerInTournament } from '@/lib/api/api'
 import { useRouter } from 'next/navigation'
+import LeftArrow from '@/components/core/leftArrow'
+import Footer from '@/components/core/footer'
 
 const formatDate = (dateString) => {
     if (!dateString) return '00:00';
@@ -94,7 +96,7 @@ export default function TournamentDetailPage() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-center p-2 sm:p-4 gap-2 sm:gap-0">
                 <button className="self-start sm:self-auto" onClick={() => router.back()}>
-                    <span className="text-yellow-200 text-4xl">&#8592;</span>
+                    <LeftArrow />
                 </button>
                 <div className="text-center flex-1">
                     <span className="text-yellow-200 text-lg sm:text-xl font-bold">COMIENZA</span>
@@ -141,15 +143,19 @@ export default function TournamentDetailPage() {
                 </div>
             </div>
 
-            <div className="bg-[#e83e5b] p-2 sm:p-4 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4">
+            {/* <div className="bg-[#e83e5b] p-2 sm:p-4 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4">
+
+            </div> */}
+
+            <Footer>
                 {alert && <div className="text-white text-center text-sm">{alert}</div>}
                 <button 
                     onClick={handleSignup}
-                    className="bg-[#f0e68c] text-black font-bold py-2 px-4 rounded"
+                    className="bg-jBeige text-black font-bold py-2 px-4 rounded"
                 >
                     <span className="text-xl">Anotarme</span>
                 </button>
-            </div>
+            </Footer>
 
             {/* Modal */}
             {showModal && (

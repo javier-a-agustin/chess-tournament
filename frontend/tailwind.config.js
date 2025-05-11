@@ -11,6 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        "xsm": "7px"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +49,11 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         gold: "#f0e68c",
+        jBeige: "#F5E2A0",
+        jText: "#f0e68c",
+        jTextRed: "#e74c3c",
+        jTextRedHover: "#c0392b",
+        jRedFooter: "#e83e5b",
       },
       borderRadius: {
         lg: "var(--radius)",
